@@ -9,11 +9,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.system,
       darkTheme: AppTheme.darkTheme,
+
       initialRoute: AppRoutes.splash,
-      onGenerateRoute: AppRouter.generateRoute,
+      onGenerateRoute: AppRouter.generateRoutes,
     );
   }
 }

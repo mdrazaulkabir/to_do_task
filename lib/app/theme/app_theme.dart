@@ -18,6 +18,7 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
 
       seedColor:AppColors.seed,
+      surface: Colors.black,
       onSurface: Colors.white,    ///
       onPrimaryContainer: AppColors.containerDark, ///
 

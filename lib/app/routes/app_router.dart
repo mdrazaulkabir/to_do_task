@@ -5,7 +5,7 @@ import 'package:to_do_task/feature/new_task_screen.dart';
 import 'package:to_do_task/feature/splash_screen/splash_screen.dart';
 
 class AppRouter {
-  static Route<dynamic> generateRoute(RouteSettings settings){
+  static Route<dynamic> generateRoutes(RouteSettings settings){
     switch(settings.name){
       case AppRoutes.splash:
         return CupertinoPageRoute(builder: (_)=>SplashScreen());
