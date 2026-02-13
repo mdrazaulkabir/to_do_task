@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class AppSizes {
-  static const paddingBody=16;
-  static const radius=10;
+  static const double paddingBody=16;
+  static const double radius=10;
 
   static const iconSmall=16;
   static const iconMedium=20;
