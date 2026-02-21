@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:to_do_task/core/constant/app_sizes.dart';
 
 class CustomDatePicker extends StatefulWidget {
   final String label;
@@ -72,16 +73,19 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
   Widget build(BuildContext context) {
     /// ===== TEXTFIELD VERSION =====
     if (widget.isTextField) {
-      return GestureDetector(
-        onTap: _selectDate,
-        child: AbsorbPointer(
-          child: TextFormField(
-            controller: controller,
-            decoration: InputDecoration(
-              labelText: widget.label,
-              prefixIcon: const Icon(Icons.calendar_month),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
+      return Padding(
+        padding: const EdgeInsets.only(left:AppSizes.paddingBody,right: AppSizes.paddingBody ),
+        child: GestureDetector(
+          onTap: _selectDate,
+          child: AbsorbPointer(
+            child: TextFormField(
+              controller: controller,
+              decoration: InputDecoration(
+                labelText: widget.label,
+                prefixIcon: const Icon(Icons.calendar_month),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
             ),
           ),
@@ -90,32 +94,35 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
     }
 
     /// ===== CONTAINER VERSION =====
-    return InkWell(
-      onTap: _selectDate,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Colors.grey),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(widget.label),
-            Row(
-              children: [
-                Text(
-                  controller.text,
-                  style: const TextStyle(fontWeight: FontWeight.w500),
-                ),
-                const SizedBox(width: 8),
-                const Icon(Icons.calendar_month, size: 18),
-              ],
-            ),
-          ],
+    return Padding(
+      padding: const EdgeInsets.only(left:AppSizes.paddingBody,right: AppSizes.paddingBody ),
+      child: InkWell(
+        onTap: _selectDate,
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 14,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: Colors.grey),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(widget.label),
+              Row(
+                children: [
+                  Text(
+                    controller.text,
+                    style: const TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(width: 8),
+                  const Icon(Icons.calendar_month, size: 18),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

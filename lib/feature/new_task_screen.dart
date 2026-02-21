@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_task/app/routes/app_routes.dart';
 import 'package:to_do_task/core/constant/app_colors.dart';
 import 'package:to_do_task/core/constant/app_images.dart';
 import 'package:to_do_task/core/constant/app_sizes.dart';
@@ -11,10 +12,12 @@ class NewTaskScreen extends StatefulWidget {
 }
 
 class _NewTaskScreenState extends State<NewTaskScreen> {
-
+  DateTime? selectTime;
+  DateTime dateOfBirth=DateTime(2002-12-1);
   @override
   Widget build(BuildContext context) {
-    final toolHeight = AppSizes.height(context, 300);
+
+    final toolHeight = AppSizes.height(context, 200);
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
@@ -89,10 +92,29 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               firstDate: DateTime(1900),
               lastDate: DateTime.now(),
               onDateSelected:(date){
-
+                selectTime=date;
               },
-            )
+            ),
 
+            SizedBox(height: AppSizes.paddingBody,),
+
+           CustomDatePicker(
+             label: "date of Die",
+             isTextField: false,
+             firstDate:dateOfBirth,
+             lastDate: DateTime.now(),
+             onDateSelected: (date){
+               selectTime=date;
+               print('this is selected time $selectTime');
+             },
+           ),
+
+
+
+            ElevatedButton(onPressed: (){
+              Navigator.pushNamed(context, AppRoutes.createNewTask);
+            },
+                child: Text('create new task'))
 
           ],
     ),),
