@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_do_task/app/routes/app_router.dart';
 import 'package:to_do_task/app/routes/app_routes.dart';
 import 'package:to_do_task/app/theme/app_theme.dart';
+import 'package:to_do_task/feature/get_product/presentation/bloc/product_bloc.dart';
 
 import '../feature/create_new_task/presentation/bloc/create_new_task_bloc.dart';
 
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
 
         /// future e aro bloc add korte parba
-        // BlocProvider(create: (_) => LoginBloc()),
+        BlocProvider( create:(_)=>ProductBloc(),),
 
       ],
       child: MaterialApp(

@@ -114,8 +114,12 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
             ElevatedButton(onPressed: (){
               Navigator.pushNamed(context, AppRoutes.createNewTask);
             },
-                child: Text('create new task'))
+                child: Text('create new task')),
 
+            ElevatedButton(onPressed: (){
+              Navigator.pushNamed(context, AppRoutes.getProductUrl);
+            },
+                child: Text('Get all Product')),
           ],
     ),),
     );
