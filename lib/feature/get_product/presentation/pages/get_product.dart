@@ -107,7 +107,7 @@ class _GetProductState extends State<GetProduct> {
                           leading: SizedBox(
                             height: 40,
                             width: 40,
-                            child: (data.img != null && data.img.isNotEmpty)
+                            child: (data.img != null && data.img!.isNotEmpty)
                                 ? Image.network(
                                     data.img ?? '',
                                     errorBuilder:
