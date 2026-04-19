@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do_task/app/routes/app_routes.dart';
 import 'package:to_do_task/feature/create_new_task/presentation/pages/create_new_task.dart';
 import 'package:to_do_task/feature/get_product/presentation/pages/get_product.dart';
-import 'package:to_do_task/feature/new_task_screen.dart';
+import 'package:to_do_task/feature/all_task_screen.dart';
 import 'package:to_do_task/feature/splash_screen/splash_screen.dart';
 
 class AppRouter {
